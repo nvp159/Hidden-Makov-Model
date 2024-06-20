@@ -3,6 +3,7 @@ import pandas as pd
 from hmmlearn import hmm
 from sklearn.preprocessing import StandardScaler
 import yfinance as yf
+from sklearn.model_selection import ParameterGrid
 
 def fetch_data(ticker, interval):
     """
@@ -30,7 +31,7 @@ def preprocess_data(stock_data):
     
     return stock_data
 
-def train_model(preprocessed_data):
+def train_model(preprocessed_data, n_components=4, covariance_type="diag"):
     """
     Trains the Hidden Markov Model using preprocessed data.
     """
@@ -38,8 +39,7 @@ def train_model(preprocessed_data):
     X = preprocessed_data['Returns'].values.reshape(-1, 1)
     
     # Define the HMM parameters
-    n_components = 4  # Number of hidden states
-    model = hmm.GaussianHMM(n_components=n_components, covariance_type="diag", n_iter=1000)
+    model = hmm.GaussianHMM(n_components=n_components, covariance_type=covariance_type, n_iter=1000)
     
     # Fit the model
     model.fit(X)
@@ -61,3 +61,22 @@ def predict(model, preprocessed_data):
     predictions = np.exp(predicted_returns.cumsum())
     
     return predictions
+
+def generate_all_predictions(stock_data):
+    """
+    Generates predictions for multiple HMM configurations.
+    """
+    preprocessed_data = preprocess_data(stock_data)
+    param_grid = {
+        'n_components': [2, 4, 6, 8],
+        'covariance_type': ['spherical', 'diag', 'full', 'tied']
+    }
+    results = []
+    for params in ParameterGrid(param_grid):
+        model = train_model(preprocessed_data, **params)
+        predictions = predict(model, preprocessed_data)
+        results.append({
+            'params': params,
+            'predictions': predictions.tolist()
+        })
+    return results
