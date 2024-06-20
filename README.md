@@ -26,6 +26,14 @@ Our project highlights include:
 
 6. **Enhanced UI with Charts:** The UI now displays data through beautifully colored charts and simple, elegant components. This includes a chart for historic data and different UI components to show predictions from various models elegantly.
 
+### New Capabilities of `hmm_model.py`
+
+The `hmm_model.py` script has been significantly enhanced to include all possible HMM models and predictions from `HMM_Nifty50.ipynb`, allowing for multiple predictions from a single function call. This new functionality enables the application to generate predictions using multiple HMM configurations, including different numbers of hidden states and covariance types.
+
+### Generating Predictions with `generate_all_predictions`
+
+To utilize the new capabilities of `hmm_model.py`, a function named `generate_all_predictions` has been added. This function iterates through multiple HMM configurations and generates predictions for each, providing a comprehensive analysis of potential market movements. The predictions are structured in a JSON response, making it easy to integrate with the `app.py` `make_prediction` route.
+
 ### Getting Started with the Web Application
 
 To set up and run the web application, follow these steps:

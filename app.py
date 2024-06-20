@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from hmm_model import preprocess_data, train_model, predict, fetch_data
+from hmm_model import preprocess_data, train_model, predict, fetch_data, generate_all_predictions
 
 app = Flask(__name__)
 
@@ -21,10 +21,8 @@ def make_prediction():
     stock_data = fetch_data(ticker, interval)
     if stock_data.empty:
         return jsonify({'error': 'No data found for the given ticker and interval'}), 404
-    preprocessed_data = preprocess_data(stock_data)
-    model = train_model(preprocessed_data)
-    predictions = predict(model, preprocessed_data)
-    return jsonify({'predictions': predictions.tolist()})
+    predictions = generate_all_predictions(stock_data)
+    return jsonify({'predictions': predictions})
 
 if __name__ == '__main__':
     app.run(debug=True)
