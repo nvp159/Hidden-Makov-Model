@@ -1,6 +1,6 @@
 ## Stock Prediction Web Application Using Hidden Markov Model (HMM)
 
-This project now features a Python React web application that automates the entire process of generating stock price predictions with a single click. Users can input a stock ticker and interval, and the application will automatically fetch data from yfinance, preprocess, clean, train, test, and generate predictions using the newly integrated `hmm_model.py` script, which is a conversion of the `HMM_Nifty50.ipynb` notebook.
+This project now features a Python React web application that automates the entire process of generating stock price predictions with a single click. Users can input a stock ticker and interval, and the application will automatically fetch data, preprocess, clean, train, test, and generate predictions using the newly integrated `hmm_model.py` script.
 
 ### Introduction
 
@@ -62,7 +62,11 @@ To generate stock price predictions:
 
 1. Enter the stock ticker and interval in the provided input fields.
 2. Click the "Predict" button.
-3. The application will fetch the data, process it using the `hmm_model.py` script, and display the predictions on the screen.
+3. The application will automatically fetch the data, process it using the `hmm_model.py` script, and display the predictions on the screen. This streamlined process ensures that all operations, including data fetching, preprocessing, and training, are executed with a single click.
+
+### Integration of Data Fetching
+
+The `hmm_model.py` script has been enhanced to include data fetching functionality, allowing for a more streamlined process from data fetching to prediction. This integration simplifies the application's operation, making it more efficient and user-friendly. Users can now enjoy a seamless experience, from data fetching to generating predictions, with just a single click.
 
 ### Conversion of `HMM_Nifty50.ipynb` to `hmm_model.py`
 
