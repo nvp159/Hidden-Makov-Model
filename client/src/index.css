@@ -1,0 +1,56 @@
+/* Global styles for simplicity and elegance */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+/* Input fields styling */
+input[type="text"] {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styling */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Chart container for responsiveness and elegance */
+.chartContainer {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* Define color schemes for consistency */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+}
