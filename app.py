@@ -1,15 +1,14 @@
 from flask import Flask, request, jsonify
-import yfinance as yf
-from hmm_model import preprocess_data, train_model, predict
+from hmm_model import preprocess_data, train_model, predict, fetch_data
 
 app = Flask(__name__)
 
 @app.route('/fetch', methods=['POST'])
-def fetch_data():
+def fetch_data_route():
     data = request.get_json()
     ticker = data['ticker']
     interval = data['interval']
-    stock_data = yf.download(ticker, interval=interval)
+    stock_data = fetch_data(ticker, interval)
     if stock_data.empty:
         return jsonify({'error': 'No data found for the given ticker and interval'}), 404
     return jsonify(stock_data.to_dict())
@@ -19,7 +18,7 @@ def make_prediction():
     data = request.get_json()
     ticker = data['ticker']
     interval = data['interval']
-    stock_data = yf.download(ticker, interval=interval)
+    stock_data = fetch_data(ticker, interval)
     if stock_data.empty:
         return jsonify({'error': 'No data found for the given ticker and interval'}), 404
     preprocessed_data = preprocess_data(stock_data)

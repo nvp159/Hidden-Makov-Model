@@ -2,10 +2,18 @@ import numpy as np
 import pandas as pd
 from hmmlearn import hmm
 from sklearn.preprocessing import StandardScaler
+import yfinance as yf
+
+def fetch_data(ticker, interval):
+    """
+    Fetches stock data using yfinance based on ticker and interval parameters.
+    """
+    stock_data = yf.download(ticker, interval=interval)
+    return stock_data
 
 def preprocess_data(stock_data):
     """
-    Cleans and prepares stock data for training.
+    Cleans and prepares stock data for training. Now accepts raw stock data directly.
     """
     # Drop any NaN values
     stock_data.dropna(inplace=True)
