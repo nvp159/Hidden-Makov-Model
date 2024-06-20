@@ -1,10 +1,10 @@
 ## Stock Prediction Web Application Using Hidden Markov Model (HMM)
 
-This project now features a Python React web application that automates the entire process of generating stock price predictions with a single click. Users can input a stock ticker and interval, and the application will automatically fetch data, preprocess, clean, train, test, and generate predictions using the newly integrated `hmm_model.py` script.
+This project now features a Python React web application that automates the entire process of generating stock price predictions with a single click. Users can input a stock ticker and interval, and the application will automatically fetch data, preprocess, clean, train, test, and generate predictions using the newly integrated `hmm_model.py` script. The UI has been significantly enhanced to display data through beautifully colored charts and simple, elegant components, including a chart for historic data and prediction models.
 
 ### Introduction
 
-Financial forecasting is a critical task in investment and trading. Traders, investors, and financial analysts constantly seek effective tools and models to predict stock prices. This web application simplifies the process by automating data fetching, preprocessing, cleaning, training, testing, and predicting, making it accessible to users with varying levels of expertise.
+Financial forecasting is a critical task in investment and trading. Traders, investors, and financial analysts constantly seek effective tools and models to predict stock prices. This web application simplifies the process by automating data fetching, preprocessing, cleaning, training, testing, and predicting, making it accessible to users with varying levels of expertise. The addition of visually appealing charts and components enhances the user experience by providing a more intuitive and engaging way to view predictions and historical data.
 
 ### The Hidden Markov Model (HMM)
 
@@ -23,6 +23,8 @@ Our project highlights include:
 4. **Empirical Evidence:** We provide empirical evidence to demonstrate the effectiveness of the HMM in stock price forecasting, supported by the automated process.
 
 5. **Theoretical Foundations:** We explore the theoretical foundations of Markov models, with a specific focus on Hidden Markov Models, to gain a deeper understanding of their application in financial forecasting.
+
+6. **Enhanced UI with Charts:** The UI now displays data through beautifully colored charts and simple, elegant components. This includes a chart for historic data and different UI components to show predictions from various models elegantly.
 
 ### Getting Started with the Web Application
 
@@ -62,7 +64,7 @@ To generate stock price predictions:
 
 1. Enter the stock ticker and interval in the provided input fields.
 2. Click the "Predict" button.
-3. The application will automatically fetch the data, process it using the `hmm_model.py` script, and display the predictions on the screen. This streamlined process ensures that all operations, including data fetching, preprocessing, and training, are executed with a single click.
+3. The application will automatically fetch the data, process it using the `hmm_model.py` script, and display the predictions on the screen. This streamlined process ensures that all operations, including data fetching, preprocessing, and training, are executed with a single click. The predictions are now displayed through a line chart for historical data and bar charts for model predictions, providing a visually appealing and intuitive way to understand the data.
 
 ### Integration of Data Fetching
 
