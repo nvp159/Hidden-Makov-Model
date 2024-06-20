@@ -1,11 +1,6 @@
 from flask import Flask, request, jsonify
 import yfinance as yf
-import pandas as pd
-from hmmlearn import hmm
-import numpy as np
-from preprocessing import preprocess_data
-from training import train_model
-from prediction import predict
+from hmm_model import preprocess_data, train_model, predict
 
 app = Flask(__name__)
 
