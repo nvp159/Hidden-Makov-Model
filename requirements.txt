@@ -1,0 +1,8 @@
+Flask
+yfinance
+hmmlearn
+numpy
+pandas
+matplotlib
+scipy
+statsmodels

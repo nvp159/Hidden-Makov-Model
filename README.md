@@ -1,78 +1,69 @@
-## Hidden Markov Model (HMM) for Stock Price Forecasting
+## Stock Prediction Web Application Using Hidden Markov Model (HMM)
 
-In this project, we implemented the Hidden Markov Model (HMM) for stock price forecasting, demonstrating its potential as a predictive tool in financial markets. We conducted an extensive comparative analysis between HMM and the traditional Historical Average Return (HAR) approach, evaluating their effectiveness in stock price forecasting and providing empirical evidence to support the superiority of HMM. 
+This project now features a Python React web application that automates the entire process of generating stock price predictions with a single click. Users can input a stock ticker and interval, and the application will automatically fetch data from yfinance, preprocess, clean, train, test, and generate predictions.
 
 ### Introduction
 
-Financial forecasting is a critical task in investment and trading. Traders, investors, and financial analysts constantly seek effective tools and models to predict stock prices. Traditional approaches often rely on historical data, such as the Historical Average Return (HAR) method. However, these methods may not fully capture the dynamics and complexities of financial markets.
+Financial forecasting is a critical task in investment and trading. Traders, investors, and financial analysts constantly seek effective tools and models to predict stock prices. This web application simplifies the process by automating data fetching, preprocessing, cleaning, training, testing, and predicting, making it accessible to users with varying levels of expertise.
 
 ### The Hidden Markov Model (HMM)
 
 Hidden Markov Models are a class of statistical models used to describe a system where the states are not directly observable but can be inferred from the observed data. In the context of stock price forecasting, HMMs can be employed to model the hidden states of the market, which can include various market conditions (e.g., bull, bear, or sideways markets).
 
-### Project Highlights
+### Web Application Highlights
 
 Our project highlights include:
 
-1. **Comparative Analysis:** We compared the performance of the Hidden Markov Model (HMM) with the traditional Historical Average Return (HAR) approach. This comprehensive analysis aimed to evaluate which method offers more accurate and reliable stock price predictions.
+1. **Automated Predictions:** Users can generate all possible predictions with a single click, including data fetching, preprocessing, cleaning, training, testing, and predicting for given interval and stock ticker inputs.
 
-2. **Empirical Evidence:** We provided empirical evidence to demonstrate the superiority of the HMM in stock price forecasting. Through extensive experimentation and evaluation criteria, we showed the effectiveness of the HMM in capturing market dynamics.
+2. **Python React Web Application:** A new web application developed using Python and React, allowing for a user-friendly interface and seamless interaction.
 
-3. **Theoretical Foundations:** We explored the theoretical foundations of Markov models, with a specific focus on Hidden Markov Models. This exploration involved studying the underlying principles and mathematical frameworks to gain a deeper understanding of their application in financial forecasting.
+3. **Empirical Evidence:** We provide empirical evidence to demonstrate the effectiveness of the HMM in stock price forecasting, supported by the automated process.
 
-### Getting Started
+4. **Theoretical Foundations:** We explore the theoretical foundations of Markov models, with a specific focus on Hidden Markov Models, to gain a deeper understanding of their application in financial forecasting.
 
-To get started with this project, follow these steps:
+### Getting Started with the Web Application
+
+To set up and run the web application, follow these steps:
 
 1. **Install Dependencies:**
 
-   Ensure you have the necessary Python libraries installed by running the following commands:
+   Ensure you have the necessary Python libraries and Node.js installed. Run the following commands in your terminal:
 
-   ```python
-   !pip install hmmlearn
-   !pip install yfinance
-   !pip install numpy
-   !pip install pandas
-   !pip install matplotlib
-   !pip install scipy
-   !pip install statsmodels
+   ```bash
+   pip install -r requirements.txt
+   cd client
+   npm install
    ```
 
-2. **Data Preparation:**
+2. **Start the Backend Server:**
 
-   - Download historical stock price data in CSV format and store it in a file (e.g., "NIFTY 50.csv").
-   - Modify the script to load your data by changing the file path in the `data_csv = pd.read_csv(...)` line.
+   Navigate back to the project root directory and run the Flask backend server:
 
-3. **Execution:**
+   ```bash
+   python app.py
+   ```
 
-   Run the provided script in your Python environment. The script performs the following steps:
+3. **Launch the Web Application:**
 
-   - Loads the historical stock price data.
-   - Resamples the data to a monthly frequency.
-   - Sets up a Hidden Markov Model with different numbers of states and evaluates model performance using various criteria (AIC, BIC, HQC, and CAIC).
-   - Predicts future stock prices using the HMM and a sliding window approach.
-   - Compares the predicted prices with observed prices and plots the results.
+   Open a new terminal window, navigate to the `client` directory, and start the React application:
 
-4. **Results:**
+   ```bash
+   npm start
+   ```
 
-   The script generates plots for AIC, BIC, HQC, and CAIC values for different numbers of states in the HMM. It also plots the predicted and observed stock prices for evaluation.
+   The web application will be accessible at `http://localhost:3000`.
 
-### Key Components
+### Using the Application
 
-- **Data Loading and Preprocessing:** The script loads historical stock price data, resamples it to a monthly frequency, and prepares the data for modeling.
+To generate stock price predictions:
 
-- **Hidden Markov Model (HMM):** The script uses the `hmmlearn` library to create an HMM with a variable number of states. It trains the model using the Baum-Welch algorithm and evaluates its performance.
+1. Enter the stock ticker and interval in the provided input fields.
+2. Click the "Predict" button.
+3. The application will fetch the data, process it, and display the predictions on the screen.
 
-- **Evaluation Criteria:** The script uses Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), Hannan-Quinn Criterion (HQC), and Consistent Akaike Information Criterion (CAIC) to select the optimal number of states for the HMM.
+### Troubleshooting
 
-- **Stock Price Prediction:** The HMM is used to predict future stock prices by sliding a window over the historical data and selecting the most likely state sequence.
-
-- **Plotting:** The script generates plots to visualize the evaluation criteria and the comparison between predicted and observed stock prices.
-
-### Note
-
-This script serves as an example of using Hidden Markov Models for stock price prediction. Keep in mind that stock price prediction is a complex task, and the HMM model's performance may vary depending on the data and the chosen parameters. It is recommended to further fine-tune and validate the model for real-world applications.
-
-For any questions or issues, feel free to contact the author of this repository.
+If you encounter any issues while setting up or using the web application, please ensure that all dependencies are correctly installed and that the Flask backend server is running. For further assistance, feel free to contact the author of this repository.
 
 **Author:** Nikhil Kumar Patel
